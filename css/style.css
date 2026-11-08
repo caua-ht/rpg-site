@@ -1,0 +1,171 @@
+/* ===== Variáveis: para trocar o visual do site, mude só estas linhas ===== */
+:root {
+  --cor-fundo: #f3f4f6;
+  --cor-superficie: #ffffff;
+  --cor-texto: #1b1f24;
+  --cor-texto-suave: #5a6270;
+  --cor-destaque: #2f5d62;
+  --cor-sobre-destaque: #ffffff; /* cor do texto quando o fundo é a cor de destaque */
+  --cor-borda: #d9dde3;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --raio: 6px;
+}
+
+/* ===== Temas dos mundos =====
+   Quem tiver data-mundo="..." troca as variáveis acima só para si e para os filhos. */
+[data-mundo="frostgard"] {
+  --cor-fundo: #d5e6f2;
+  --cor-superficie: #e9f2f9;
+  --cor-texto: #0f2233;
+  --cor-texto-suave: #3e5a73;
+  --cor-destaque: #14707a;
+  --cor-sobre-destaque: #ffffff;
+  --cor-borda: #b4cfe2;
+}
+
+[data-mundo="thalassia"] {
+  --cor-fundo: #cdeeea;
+  --cor-superficie: #e4f6f5;
+  --cor-texto: #0b2e33;
+  --cor-texto-suave: #35666b;
+  --cor-destaque: #08737a;
+  --cor-sobre-destaque: #ffffff;
+  --cor-borda: #a5d8d6;
+}
+
+[data-mundo="terrazero"] {
+  --cor-fundo: #1f221c;
+  --cor-superficie: #2a2e27;
+  --cor-texto: #e8eadf;
+  --cor-texto-suave: #b2b8a3;
+  --cor-destaque: #a3b85a;
+  --cor-sobre-destaque: #1c2018;
+  --cor-borda: #4a5043;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte);
+  line-height: 1.6;
+}
+
+/* ===== Topo e menu ===== */
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 16px 24px;
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+#menu a {
+  padding: 8px 14px;
+  border-radius: var(--raio);
+  color: var(--cor-texto-suave);
+  text-decoration: none;
+}
+
+#menu a:hover {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+#menu a.ativo {
+  background: var(--cor-destaque);
+  color: var(--cor-sobre-destaque);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+/* ===== Conteúdo e rodapé ===== */
+.conteudo {
+  max-width: 860px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+.conteudo section {
+  margin-bottom: 40px;
+}
+
+.rodape {
+  padding: 24px;
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ===== Botão ===== */
+.botao {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: var(--raio);
+  background: var(--cor-destaque);
+  color: var(--cor-sobre-destaque);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.botao:hover {
+  filter: brightness(1.1);
+}
+
+/* ===== Cartões de mundo ===== */
+.mundo {
+  padding: 20px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+.mundo h3 {
+  margin-top: 0;
+  color: var(--cor-destaque);
+}
+
+.mundo .dica {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
+}
+
+.grade-mundos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.lista-mundos {
+  display: grid;
+  gap: 24px;
+}
+
+/* ===== Home: passos de como jogar ===== */
+.passos {
+  padding-left: 20px;
+}
